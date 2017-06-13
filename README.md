@@ -33,4 +33,4 @@ In case of error, the form is displayed again.
 In case of success, a "hello" page is displayed, and indicates the identity of the user as of two different PHP variables :  
 _ `$_SERVER['REMOTE_USER']`  
 _ `$_SERVER['PHP_AUTH_USER']`  
-![Alt text](docs/login.png?raw=true "Login page")
+![Alt text](docs/logged.png?raw=true "Authenticated page")
