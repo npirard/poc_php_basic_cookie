@@ -35,3 +35,9 @@ _ `$_SERVER['REMOTE_USER']`
 _ `$_SERVER['PHP_AUTH_USER']`  
 
 ![Alt text](docs/logged.png?raw=true "Authenticated page")
+
+### Trigger the problem
+Once authenticated, add to the request a basic authentication header, like :  
+```
+```
+
