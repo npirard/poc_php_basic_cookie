@@ -1,0 +1,24 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<form name="loginform" method="POST" action="/auth/dologin" >
+			<label for="inputLogin" class="sr-only">login</label>
+		    <input type="text" 
+				id="inputLogin"
+				name="httpd_username" 
+				placeholder="login"
+				value="" 
+				autofocus="autofocus"/>
+			<label for="inputPassword">password</label>
+		    <input type="password" 
+		    	id="inputPassword"
+				name="httpd_password" 
+				placeholder="password"
+				value="" />
+		    <input type="submit" 
+		    	name="login" 
+		    	value="Connect" />
+		</form>
+	</body>
+</html>
