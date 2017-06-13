@@ -27,6 +27,7 @@ sudo docker run -d -p 80:80 -v ${PWD}/htdocs:/var/www/html/ -v ${PWD}/htpasswd:/
 
 ### View the application
 Open a browser and open http://localhost. The authenticaton form will be displayed :
+![Alt text](docs/login.png?raw=true "Login page")
 
 Two user/pwd are already set : _toto/totopwd_ and _titi/titipwd_  
 In case of error, the form is displayed again.  
