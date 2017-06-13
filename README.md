@@ -38,6 +38,9 @@ _ `$_SERVER['PHP_AUTH_USER']`
 
 ### Trigger the problem
 Once authenticated, add to the request a basic authentication header, like :  
+`Authorization: Basic RG9uYWxkVHJ1bXA6c3Ryb25ncHdk`
 ```
+![Alt text](docs/added_header.png?raw=true "Added header")
 ```
+"RG9uYWxkVHJ1bXA6c3Ryb25ncHdk" is the base64 encoded string for "DonaldTrump:strongpwd"
 
