@@ -34,12 +34,25 @@ In case of success, a "hello" page is displayed, and indicates the identity of t
 _ `$_SERVER['REMOTE_USER']`  
 _ `$_SERVER['PHP_AUTH_USER']`  
 
-![Alt text](docs/logged.png?raw=true "Authenticated page")
+![Alt text](docs/logged.png?raw=true "Authenticated page")  
+Both variables contain the id of the authenticated user.
 
 ### Trigger the problem
 Once authenticated, add to the request a basic authentication header, like :  
 `Authorization: Basic RG9uYWxkVHJ1bXA6c3Ryb25ncHdk`  
+(Use a proxy of some sort, eg Burp, or the Developer Tools of the browser)
 ![Alt text](docs/added_header.png?raw=true "Added header")
 
-"RG9uYWxkVHJ1bXA6c3Ryb25ncHdk" is the base64 encoded string for "DonaldTrump:strongpwd"
+`RG9uYWxkVHJ1bXA6c3Ryb25ncHdk` is the base64 encoded string for `DonaldTrump:strongpwd`, which would represent the user DonaldTrump with the password strongpwd. 
+The response to the request clearly shows the problem :  
+```
+     <li>$_SERVER['REMOTE_USER']&nbsp;:&nbsp;toto</li>
+     <li>$_SERVER['PHP_AUTH_USER']&nbsp;:&nbsp;DonaldTrump</li>
+```  
+The `$_SERVER['PHP_AUTH_USER']` variable contains the identity present in the Authorization header, without any test of its credentials, even though an other user is currently authenticated (eg toto).  
+Any code relying on it can then be fooled.
+
+## Possible mitigations
+### Do not use $_SERVER['PHP_AUTH_USER']
+[Php documentation](http://php.net/manual/en/reserved.variables.server.php) indicates some subtleties on those two variables :
 
