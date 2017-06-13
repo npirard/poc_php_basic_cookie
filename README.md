@@ -30,6 +30,6 @@ Open a browser and open http://localhost. The authenticaton form will be display
 
 Two user/pwd are already set : toto/totopwd and titi/titipwd  
 In case of error, the form is displayed again.  
-In case of success, a "hello" page is displayed, and indicates the identity of the user as of two different PHP variables :
+In case of success, a "hello" page is displayed, and indicates the identity of the user as of two different PHP variables :  
 _ `$_SERVER['REMOTE_USER']`  
 _ `$_SERVER['PHP_AUTH_USER']`  
