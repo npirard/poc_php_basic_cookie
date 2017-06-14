@@ -57,7 +57,7 @@ Any code relying on it can then be fooled.
 [Php documentation](http://php.net/manual/en/reserved.variables.server.php) indicates some subtleties on those two variables :
 * 'REMOTE_USER' : _The authenticated user._  
 * 'PHP_AUTH_USER' : _When doing HTTP authentication this variable is set to the username provided by the user._  
-We can notice that the latter one does not state that the username is actually authenticated... subtle. Not quite sure why this variable is set when no Authorization header is provided.
+We can notice that the latter one does not state that the username is actually authenticated... subtle. Not quite sure why this variable is set when no Authorization header is provided, nor why the basic authorization header supersedes the session user.
 
 ### Remove Authorization header
 The Authorization header can also be forcibly removed by the Apache http server configuration
